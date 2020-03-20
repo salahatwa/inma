@@ -140,7 +140,8 @@ h2 {
     color: #222;
     font-weight: 400;
     font-family: 'Montserrat';
-    /* background-image: url("./../../../../assets/images/signup-bg.jpg"); */
+    /* background-image: url("./../../../assets/images/640.jpg"); */
+    background-color: #F4F2F0;
     background-repeat: no-repeat;
     background-size: cover;
     -moz-background-size: cover;
@@ -151,10 +152,14 @@ h2 {
     /* padding: 115px 0; */
     height: 94%;
 }
-
+img.card-img{
+    width:30%;
+    height: 30%;
+}
 .container {
     width: 660px;
     position: relative;
+    /* padding-top:10px; */
     /* margin: 0 auto; */
     /* margin-top: 20px; */
 }

@@ -1,12 +1,16 @@
-<div class="main-content">
-  <div class="container-fluid jumbotron vertical-center container">
+
+<!-- <div class="main-content"> -->
+    
+<!-- </div> -->
+
+<div class="main">
+  <div class="container-fluid jumbotron vertical-center container" style="background-color: #F4F2F0;">
 
           <div class="signup-content">
 
-              <!-- <app-list-errors [errors]="errors"></app-list-errors> -->
               <form [formGroup]="authForm" (ngSubmit)="submitForm()" id="signup-form" class="signup-form">
-                  <h2 class="form-title">{{'intro' | translate}}</h2>
-
+                  <h2 class="form-title"><img src="assets/images/inmaInvest.png"  class="card-img"></h2>
+                  <!-- {{'intro' | translate}} -->
 
                   <mat-form-field  appearance="outline" class="example-chip-list">
                       <mat-label>{{'form.label.email' | translate}}</mat-label>
@@ -29,10 +33,9 @@
               </form>
 
               <p class="loginhere">
-                  <!-- <a [routerLink]="['/login']" class="loginhere-link" >Have an account?</a> -->
               </p>
 
           </div>
 
 </div>
-</div>
+</div> 
