@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Config } from '../../classes/config';
 import { TranslateService } from '@ngx-translate/core';
 import { UtilsService } from '../../services/utils.service';
+import { NgProgress, NgProgressRef } from 'ngx-progressbar';
 
 declare interface RouteInfo {
   path: string;
@@ -21,9 +22,11 @@ export class SidebarComponent implements OnInit {
    
   sidebar: boolean = true;
   menuItems: RouteInfo[];
-
-  constructor(private utilService:UtilsService)
+  // private progressRef: NgProgressRef;
+  constructor(private utilService:UtilsService,private progress: NgProgress )
   {
+    // this.progressRef = this.progress.ref('myProgress');
+    
   }
 
   async ngOnInit() {
@@ -44,6 +47,7 @@ export class SidebarComponent implements OnInit {
  
   updatePageTitle(key:string)
   {
+    // this.progressRef.start();
     this.utilService.setDocTitle(key,false);
   }
 

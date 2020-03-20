@@ -9,6 +9,7 @@ import { ApiService } from '../services/api.service';
 import { NavbarModule } from '../components/navbar/navbar.module';
 import { SidebarModule } from '../components/sidebar/sidebar.module';
 import { Title } from '@angular/platform-browser';
+import { NgProgress, NgProgressRef } from 'ngx-progressbar';
 
 @NgModule({
   imports: [

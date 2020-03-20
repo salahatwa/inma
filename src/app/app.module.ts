@@ -12,6 +12,7 @@ import { DatePipe } from '@angular/common';
 import { LayoutComponent } from './main/layout.component';
 import { SharedModule } from './shared/modules/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgProgressHttpModule } from 'ngx-progressbar/http';
 
 // npm install --save notyf
 // ng serve -prod
@@ -22,7 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
-    NgProgressModule,
+    NgProgressModule.withConfig({
+      spinnerPosition: "left",
+      color: "#f71cff"
+    }),
+    NgProgressHttpModule,
     MainModule,
     AppRoutingModule,
     TranslationModule,

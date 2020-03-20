@@ -1,5 +1,7 @@
 <div class="main-content">
     <div class="container-fluid">
-<p>profile works!</p>
+        <button class="chip" (click)="testHttp()" [disabled]="preventAbuse">
+            {{ preventAbuse ? 'Wait...' : 'Test Http Request' }}
+          </button>
 </div>
 </div>

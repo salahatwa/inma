@@ -1,5 +1,6 @@
 {
   "intro": "الإنماء استثمار",
+  "change":{"language":"اختر اللغه"},
   "form":{
     "button":{
     "login":"تسجيل الدخول"

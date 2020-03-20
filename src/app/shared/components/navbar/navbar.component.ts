@@ -1,8 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { Subscription, Subject, Observable } from 'rxjs';
-import { Config } from '../../classes/config';
-import { User } from '../../../core/classes/user.model';
+import { Component,ElementRef } from '@angular/core';
 import { UtilsService } from '../../services/utils.service';
 import { Router } from '@angular/router';
 
@@ -20,12 +16,10 @@ export class NavbarComponent  {
 
 
   constructor(private utilService:UtilsService, private element: ElementRef, private router: Router) {
-  
         this.sidebarVisible = false;
   }
 
   ngOnInit(){
-    // this.listTitles = ROUTES.filter(listTitle => listTitle);
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     this.router.events.subscribe((event) => {
@@ -56,8 +50,6 @@ export class NavbarComponent  {
       body.classList.remove('nav-open');
   };
   sidebarToggle() {
-      // const toggleButton = this.toggleButton;
-      // const body = document.getElementsByTagName('body')[0];
       var $toggle = document.getElementsByClassName('navbar-toggler')[0];
 
       if (this.sidebarVisible === false) {

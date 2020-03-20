@@ -5,6 +5,7 @@ import { Config } from './shared/classes/config';
 import { UtilsService } from './shared/services/utils.service';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 declare const Offline: any;
 declare const jQuery: any;
@@ -18,6 +19,9 @@ declare const ipcRenderer: any;
 })
 export class AppComponent implements OnInit {
 
+  private subscription: Subscription;
+  public spinnerPos:string='left';
+  public progressDir:string='ltr+';
 
   constructor( router: Router,
     private utilService: UtilsService,
@@ -26,6 +30,7 @@ export class AppComponent implements OnInit {
   ) {
   
     this.utils.loadDefaultSetting();
+    this.reloadDir();
 
     router.events.subscribe(event => {
       if(event instanceof NavigationEnd) {
@@ -34,6 +39,43 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+
+  /**
+   * auto reload direction on language change
+   */
+  reloadDir()
+  {
+    // setup listener to listen if language changed
+    this.subscription = this.utilService.changeLangDir$.subscribe((data) =>  {
+      console.log(data);
+      if(data==='ar')
+      {
+      this.spinnerPos='left';
+      this.progressDir='ltr+';
+      }
+      else
+      {
+      this.spinnerPos='right';
+      this.progressDir='rtl+';
+      }
+     });
+
+     // check by defualt lang
+     let lang:string = this.utilService.getCurrentLang();
+       if(lang&&lang!=null&&lang!=''&&lang==='ar')
+       {
+        this.spinnerPos='left';
+        this.progressDir='ltr+';
+        }
+       else
+       {
+        this.spinnerPos='right';
+        this.progressDir='rtl+';
+        }
+  }
+
+
 
   // collect that title data properties from all child routes
   // there might be a better way but this worked for me
@@ -52,6 +94,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {  
   }
 
-
+  public ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
 }
