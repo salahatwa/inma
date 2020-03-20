@@ -1,5 +1,6 @@
 {
   "intro": "Inma Invest",
+  "change":{"language":"Change Language"},
   "form":{
     "button":{
     "login":"Login"
