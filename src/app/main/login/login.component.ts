@@ -29,6 +29,7 @@ export class LoginComponent {
   errors: [] ;
   isSubmitting = false;
   authForm: FormGroup;
+  selectedLang:string='en';
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +39,7 @@ export class LoginComponent {
     private utilService:UtilsService
   ) {
     this.utilService.setDocTitle('form.button.login',true);
+    this.selectedLang=this.utilService.getCurrentLang();
   }
 
   ngOnInit() {
@@ -65,5 +67,8 @@ export class LoginComponent {
     this.utilService.setDocTitle('dashboard.title',false);
   }
 
+  useLanguage(language: string) {
+    this.utilService.setLang(language);
+  }
 
 }
