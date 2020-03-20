@@ -14084,7 +14084,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
  /* left:0; */
  z-index:2;
  width:260px;
- background:#fff;
+ background:#522D24;
  box-shadow:0 16px 38px -12px rgba(0,0,0,.56),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)
 }
 .sidebar .caret {
@@ -14115,7 +14115,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 .sidebar .sidebar-wrapper {
  position:relative;
- height:calc(100vh - 75px);
+ /* height:calc(100vh - 75px); */
+ height: 100%;
  overflow:auto;
  width:260px;
  z-index:4;
@@ -14287,7 +14288,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
  text-transform:uppercase;
  padding:5px 0;
  font-size:18px;
- color:#3c4858;
+ color:#fff;
  white-space:nowrap;
  font-weight:400;
  line-height:30px;
@@ -16427,7 +16428,7 @@ label {
   height:100%;
   width:100%;
   position:absolute;
-  background-color:#282828;
+  background-color:#522D24;
   display:block;
   content:"";
   z-index:1

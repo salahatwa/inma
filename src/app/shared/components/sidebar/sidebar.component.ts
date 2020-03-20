@@ -1,8 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Config } from '../../classes/config';
 import { TranslateService } from '@ngx-translate/core';
 import { UtilsService } from '../../services/utils.service';
 import { NgProgress, NgProgressRef } from 'ngx-progressbar';
+import { Subscription } from 'rxjs';
 
 declare interface RouteInfo {
   path: string;
@@ -18,8 +19,9 @@ declare interface RouteInfo {
   styles: ['./sidebar.component.css'],
   providers: []
 })
-export class SidebarComponent implements OnInit {
-   
+export class SidebarComponent implements OnInit,OnDestroy {
+  private subscription: Subscription;
+  isRTL:boolean;
   sidebar: boolean = true;
   menuItems: RouteInfo[];
   // private progressRef: NgProgressRef;
@@ -30,6 +32,7 @@ export class SidebarComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.reloadDir();
     /**
      * title , readed from langulage by key 
      */
@@ -50,5 +53,32 @@ export class SidebarComponent implements OnInit {
     // this.progressRef.start();
     this.utilService.setDocTitle(key,false);
   }
+
+  /**
+   * auto reload direction on language change
+   */
+  reloadDir()
+  {
+    // setup listener to listen if language changed
+    this.subscription = this.utilService.changeLangDir$.subscribe((data) =>  {
+      console.log(data);
+      if(data==='ar')
+      this.isRTL=true;
+      else
+      this.isRTL=false;
+     });
+
+     // check by defualt lang
+     let lang:string = this.utilService.getCurrentLang();
+       if(lang&&lang!=null&&lang!=''&&lang==='ar')
+         this.isRTL=true;
+       else
+         this.isRTL=false;
+  }
+
+  public ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
 
 }
