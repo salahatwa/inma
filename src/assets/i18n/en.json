@@ -1,0 +1,38 @@
+{
+  "intro": "Inma Invest",
+  "form":{
+    "button":{
+    "login":"Login"
+    },
+    "label":{
+      "email":"Email",
+      "password":"Password"
+    }
+  },
+  "sidebar":
+  {
+   "menu":
+   {
+    "dashboard":"Dashboard",
+    "profile":"Profile"
+   }
+  },
+  "navbar":{
+    "language":{
+      "arabic":"Arabic",
+      "english":"English"
+    }
+  },
+  "dashboard":{
+    "title":"Dashboard",
+    "space":"Used Space",
+    "revenue":"Revenue",
+    "fixedIssue":"Fixed Issues",
+    "followers":"Followers"
+  },
+  "profile":{
+    "title":"Profile"
+  }
+
+
+}

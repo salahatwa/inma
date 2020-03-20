@@ -1,0 +1,38 @@
+<div class="main-content">
+  <div class="container-fluid jumbotron vertical-center container">
+
+          <div class="signup-content">
+
+              <!-- <app-list-errors [errors]="errors"></app-list-errors> -->
+              <form [formGroup]="authForm" (ngSubmit)="submitForm()" id="signup-form" class="signup-form">
+                  <h2 class="form-title">{{'intro' | translate}}</h2>
+
+
+                  <mat-form-field  appearance="outline" class="example-chip-list">
+                      <mat-label>{{'form.label.email' | translate}}</mat-label>
+                      <input matInput formControlName="usernameOrEmail">
+                      <mat-icon matSuffix><i class="material-icons">email</i></mat-icon>
+                  </mat-form-field>
+
+
+
+                  <mat-form-field appearance="outline" class="example-chip-list">
+                      <mat-label>{{'form.label.password' | translate}}</mat-label>
+                      <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                      <mat-icon *ngIf="hide" matSuffix><i class="material-icons" style="cursor: pointer;" (click)="hide = !hide;$event.preventDefault()" >visibility_off</i></mat-icon>
+                      <mat-icon *ngIf="!hide" matSuffix><i class="material-icons" style="cursor: pointer;" (click)="hide = !hide;$event.preventDefault()" >visibility</i></mat-icon>
+                  </mat-form-field>
+
+                  <button mat-raised-button color="primary" [class.spinner]="isSubmitting" [disabled]="!authForm.valid||isSubmitting" type="submit">
+                    {{'form.button.login' | translate}}
+                  </button>
+              </form>
+
+              <p class="loginhere">
+                  <!-- <a [routerLink]="['/login']" class="loginhere-link" >Have an account?</a> -->
+              </p>
+
+          </div>
+
+</div>
+</div>
