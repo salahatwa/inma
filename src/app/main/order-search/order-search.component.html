@@ -1,0 +1,215 @@
+<!-- <div class="main-content">
+    <div class="container-fluid">
+        <button mat-raised-button color="primary" [class.spinner]="preventAbuse" (click)="testHttp()" [disabled]="preventAbuse">
+            {{ preventAbuse ? 'Wait...' : 'Test Http Request' }}
+        </button>
+</div>
+</div> -->
+
+<div class="tab-pane" id="list-search">              
+    <div class="row order-row mb-4">
+      <div class="col-12">
+        <div class="section-box order-entry h-100">
+          <div class="section-title clearfix"><h2 class="float-right">بحث الطلبات</h2></div>
+          <div class="section-content">                    
+            <form id="order-search-form">
+              <div class="form-row">
+
+                <div class="col-md-2 mb-3">
+                  <label for="">من تاريخ</label>
+                  <input type="date" class="form-control form-control-lg" id="" value="">                         
+                </div> 
+
+                <div class="col-md-2 mb-3">
+                  <label for="">إلى تاريخ</label>
+                  <input type="date" class="form-control form-control-lg" id="" value="">                         
+                </div> 
+
+                <div class="col-md-2 mb-3">
+                  <label for="">الأمر</label>
+                  <select class="form-control form-control-lg" id="">
+                    <option selected disabled value="">شراء</option>
+                    <option>...</option>
+                  </select>                          
+                </div>
+
+                <div class="col-md-2 mb-3">
+                  <label for="">نوع الأمر</label>
+                  <select class="form-control form-control-lg" id="">
+                    <option selected disabled value="">سعر محدد</option>
+                    <option>...</option>
+                  </select>                          
+                </div>
+
+                <div class="col-md-2 mb-3">
+                  <label for="">رمز السهم</label>
+                  <input type="text" class="form-control form-control-lg" id="" placeholder="مثال: 1245" value="">
+                </div>   
+
+                <div class="col-md-2 mb-3">
+                  <label for="">رقم المحفظة</label>
+                  <input type="text" class="form-control form-control-lg" id="" placeholder="مثال: 1245" value="">
+                </div>                        
+
+                <div class="col-md-2 mb-3">
+                  <label for="">رقم الطلب</label>
+                  <input type="text" class="form-control form-control-lg" id="" placeholder="" value="">
+                </div>  
+
+                <div class="col-md-4 mb-3">
+                  <div class="form-row align-items-center h-100">
+                    <div class="col-auto my-1">
+                      <div class="custom-control custom-checkbox ml-sm-2">
+                        <input type="checkbox" class="custom-control-input" id="myOrders">
+                        <label class="custom-control-label" for="myOrders">أوامري</label>
+                      </div>
+                    </div>
+                    <div class="col-auto my-1">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="outstandingOrders">
+                        <label class="custom-control-label" for="outstandingOrders">الأوامر القائمة</label>
+                      </div>
+                    </div>    
+                  </div>
+                </div>                
+              </div>
+
+              <div class="d-flex flex-row-reverse bd-highlight">
+                <button class="btn btn-success btn-lg mr-2" type="submit" >إرسال الأمر</button>
+                <button class="btn btn-outline-secondary btn-lg" type="submit">مسح</button>
+              </div>
+            </form>
+          </div>
+        </div><!-- End section-box -->
+      </div>
+    </div><!-- End order-row -->
+
+    <div class="row emptysearch-row mb-4">
+      <div class="col-12">
+        <div class="section-box order-entry h-100">
+          <div class="section-title clearfix"><h2 class="float-right">نتائج البحث عن الأوامر</h2></div>
+          <div class="section-content">
+
+            <div class="jumbotron bg-white empty-search text-center">
+              <i data-feather="slash" width="48" height="48" class="mb-3"></i>
+              <p class="lead font-weight-bold">عفواً، لا توجد نتائج للمعطيات التي تم إدخالها</p>
+            </div>
+
+          </div>
+        </div><!-- End section-box -->
+      </div>
+    </div><!-- End order-row -->
+
+    <div class="row outstanding-row">
+      <div class="col-12">
+        <div class="section-box">
+          <div class="section-title clearfix">
+            <h2 class="float-right">نتائج البحث عن الأوامر</h2>
+            <a class="expand-icon float-left" href="#outstandingCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="outstandingCollapse">
+              <i data-feather="chevron-up"></i>
+            </a>
+          </div>
+          <div class="section-content collapse show" id="outstandingCollapse">
+            <div class="alert alert-success mb-3" role="alert">
+              <i data-feather="check-circle" class="ml-1"></i>
+              تم جلب بيانات الأوامر بنجاح، مجموع الأوامر المطابقة لبحثك 2
+            </div>  
+            <div class="table-responsive">                                   
+              <table class="table table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">رقم الامر</th>
+                    <th scope="col">تاريخ الطلب</th>
+                    <th scope="col">اسم الشركة</th>
+                    <th scope="col">نوع الأمر</th>
+                    <th scope="col">الحالة</th>
+                    <th scope="col">الكمية</th>
+                    <th scope="col">السعر</th>
+                    <th scope="col">الكمية المنفذة</th>
+                    <th scope="col">تاريخ الانتهاء</th>
+                    <th scope="col">الفاتورة الضريبية</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-middle dropdown order-link-holder">
+                      <a class="btn btn-link dropdown-toggle p-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                        2003762W25
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderSummaryModal"><i data-feather="info"></i>ملخص الأمر</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderHistoryModal"><i data-feather="calendar"></i>تاريخ الطلب</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#"><i data-feather="copy"></i>تصدير الأمر</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderEditModal"><i data-feather="edit"></i>تعديل الأمر</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderCancelModal"><i data-feather="x-circle"></i>إلغاء الأمر</a>
+                      </div>                    
+                    </td>
+                    <td>28-01-2020</td>
+                    <td>الشركة السعودية للصناعات الأساسية</td>
+                    <td><span class="ml-1 text-danger d-inline-block">بيع</span>محدد السعر</td>
+                    <td>منتهي الصلاحية</td>
+                    <td>227</td>
+                    <td>89.60</td>
+                    <td>0</td>
+                    <td>28-01-2020</td>
+                    <td><a href="#"><i data-feather="printer"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle dropdown order-link-holder">
+                      <a class="btn btn-link dropdown-toggle p-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                        2003762W25
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderSummaryModal"><i data-feather="info"></i>ملخص الأمر</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderHistoryModal"><i data-feather="calendar"></i>تاريخ الطلب</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#"><i data-feather="copy"></i>تصدير الأمر</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderEditModal"><i data-feather="edit"></i>تعديل الأمر</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item clearfix" href="#" data-toggle="modal" data-target="#orderCancelModal"><i data-feather="x-circle"></i>إلغاء الأمر</a>
+                      </div>                    
+                    </td>
+                    <td>28-01-2020</td>
+                    <td>الشركة السعودية للصناعات الأساسية</td>
+                    <td><span class="ml-1 text-success d-inline-block">شراء</span>سعر السوق</td>
+                    <td>منتهي الصلاحية</td>
+                    <td>227</td>
+                    <td>89.60</td>
+                    <td>0</td>
+                    <td>28-01-2020</td>
+                    <td><a href="#"><i data-feather="printer"></i></a></td>
+                  </tr>               
+                </tbody>
+              </table> 
+              <div class="pagination-container d-flex flex-row-reverse pt-2">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination mb-0">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div><!-- end pagintaion-container -->                               
+            </div> <!-- end table-responsive -->                                
+          </div>
+        </div><!-- End section-box -->
+      </div>
+    </div><!-- End outstanding-row -->
+
+  </div>

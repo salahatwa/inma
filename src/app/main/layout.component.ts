@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import { UtilsService } from '../shared/services/utils.service';
 import { Subscription } from 'rxjs';
 import { NgProgress } from 'ngx-progressbar';
+import { fadeAnimation } from '../shared/utils/fade.animation';
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css']
+  styleUrls: ['./layout.component.scss'],
+  animations: [fadeAnimation]
 })
 export class LayoutComponent implements OnInit , OnDestroy {
 
@@ -21,6 +23,11 @@ export class LayoutComponent implements OnInit , OnDestroy {
    this.reloadDir();
    
   }
+
+  public getRouterOutletState(outlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
+  }
+
 
   /**
    * auto reload direction on language change

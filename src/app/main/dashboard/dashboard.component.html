@@ -1,77 +1,47 @@
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-order" role="tabpanel" aria-labelledby="list-order-list">
+
+      <div class="row order-row mb-4">
+        <div class="col-5">
+         <app-enter-order></app-enter-order>
+          <!-- End section-box -->
+        </div>
+        <div class="col-4">
+          <app-stock-detail></app-stock-detail>
+          <!-- End section-box -->
+        </div>
+        <div class="col-3">
+          <app-commission-detail></app-commission-detail>
+          <!-- End section-box -->
+        </div><!-- End col-3 -->
+      </div><!-- End order-row -->
 
 
+      <div class="row portfolio-row mb-4">              
+        <div class="col-3">
+         <app-portfolio-search></app-portfolio-search>
+          <!-- End section-box -->
+        </div>
+        <div class="col-9">
+          <app-portfolio-detail></app-portfolio-detail>
+          <!-- End section-box -->
+        </div>
+      </div><!-- End portfolio-row -->
 
-<div class="main-content">
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-warning card-header-icon">
-                      <div class="card-icon">
-                          <i class="material-icons">content_copy</i>
-                      </div>
-                      <p class="card-category">{{ 'dashboard.space' | translate }}</p>
-                      <h3 class="card-title">49/50
-                          <small>GB</small>
-                      </h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons text-danger">warning</i>
-                          <a href="javascript:void(0)">Get More Space...</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-success card-header-icon">
-                      <div class="card-icon">
-                          <i class="material-icons">store</i>
-                      </div>
-                      <p class="card-category">{{ 'dashboard.revenue' | translate }}</p>
-                      <h3 class="card-title">$34,245</h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons">date_range</i> Last 24 Hours
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-danger card-header-icon">
-                      <div class="card-icon">
-                          <i class="material-icons">info_outline</i>
-                      </div>
-                      <p class="card-category">{{ 'dashboard.fixedIssue' | translate }}</p>
-                      <h3 class="card-title">75</h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons">local_offer</i> Tracked from Github
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-info card-header-icon">
-                      <div class="card-icon">
-                          <i class="fa fa-twitter"></i>
-                      </div>
-                      <p class="card-category">{{ 'dashboard.followers' | translate }}</p>
-                      <h3 class="card-title">+245</h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons">update</i> Just Updated
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-     
+
+      <div class="row portfolio-sympols-row mb-4">
+        <div class="col">
+         <app-portfolio-stock-detail></app-portfolio-stock-detail>
+        </div>            
+      </div><!-- End portfolio-sympols-row -->
+
+      <div class="row outstanding-row">
+        <div class="col">
+         <app-existing-order></app-existing-order>
+        </div><!-- End section-box -->
+      </div><!-- End outstanding-row -->
+
+    </div>
+   
+  
   </div>
-</div>

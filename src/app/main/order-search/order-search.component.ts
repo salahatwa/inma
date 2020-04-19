@@ -3,11 +3,11 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-order-search',
+  templateUrl: './order-search.component.html',
+  styleUrls: ['./order-search.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class OrderSearchComponent implements OnInit {
 
 constructor(private utilService:UtilsService,private http:HttpClient)
 {

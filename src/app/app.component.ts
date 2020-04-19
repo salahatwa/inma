@@ -7,15 +7,11 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-declare const Offline: any;
-declare const jQuery: any;
-declare const UIkit: any;
-declare const ipcRenderer: any;
 
 @Component({
   selector: 'app-inma-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
 

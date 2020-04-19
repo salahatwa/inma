@@ -20,7 +20,7 @@ class AuthenticationRequest {
 @Component({
   selector: 'app-inma-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
   providers:[UserService,ApiService,JwtService]
 })
 export class LoginComponent {

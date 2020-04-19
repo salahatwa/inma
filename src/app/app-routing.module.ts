@@ -7,7 +7,7 @@ import { LayoutComponent } from './main/layout.component';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { DashboardModule } from './main/dashboard/dashboard.module';
 import { AppLayoutModule } from './main/app-layout.module';
-import { ProfileComponent } from './main/profile/profile.component';
+import { OrderSearchComponent } from './main/order-search/order-search.component';
 
 
 @NgModule({
@@ -29,10 +29,9 @@ import { ProfileComponent } from './main/profile/profile.component';
           data: {title: 'dashboard.title'}
         },
         {
-          path: 'profile',
-          component:ProfileComponent,
+          path: 'order-search',
+          component:OrderSearchComponent,
           loadChildren: () => AppLayoutModule ,
-          data: {title: 'profile.title'}
         }
       ]
       },

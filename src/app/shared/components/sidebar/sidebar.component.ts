@@ -16,7 +16,7 @@ declare interface RouteInfo {
 @Component({
   selector: 'app-inma-sidebar',
   templateUrl: './sidebar.component.html',
-  styles: ['./sidebar.component.css'],
+  styles: ['./sidebar.component.scss'],
   providers: []
 })
 export class SidebarComponent implements OnInit,OnDestroy {

@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar.component';
 import { SharedModule } from '../../modules/shared.module';
 import { MatrialModule } from '../../modules/matrial.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { IconsModule } from '../../modules/icons.module';
 
 
 
@@ -12,7 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     CommonModule,
     MatrialModule,
-    TranslateModule
+    TranslateModule,
+    IconsModule
     // SharedModule
   ],
   exports:[NavbarComponent]

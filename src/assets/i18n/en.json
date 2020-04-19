@@ -6,7 +6,8 @@
     "login":"Login"
     },
     "label":{
-      "email":"Email",
+      "welcome":"welcome !",
+      "email":"User name",
       "password":"Password"
     }
   },

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { ProfileModule } from './profile/profile.module';
+import { OrderSearchModule } from './order-search/order-search.module';
 
 @NgModule({
   imports: [],
@@ -9,7 +9,7 @@ import { ProfileModule } from './profile/profile.module';
   exports: [
     LoginModule,
     DashboardModule,
-    ProfileModule
+    OrderSearchModule
   ]
 })
 export class MainModule { }

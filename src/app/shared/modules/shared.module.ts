@@ -10,6 +10,8 @@ import { NavbarModule } from '../components/navbar/navbar.module';
 import { SidebarModule } from '../components/sidebar/sidebar.module';
 import { Title } from '@angular/platform-browser';
 import { NgProgress, NgProgressRef } from 'ngx-progressbar';
+import { IconsModule } from './icons.module';
+import { FooterModule } from '../components/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -17,10 +19,12 @@ import { NgProgress, NgProgressRef } from 'ngx-progressbar';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    IconsModule,
     TranslateModule,
     MatrialModule,
     NavbarModule,
-    SidebarModule
+    SidebarModule,
+    FooterModule,
   ],
   declarations: [
     
@@ -30,10 +34,12 @@ import { NgProgress, NgProgressRef } from 'ngx-progressbar';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    IconsModule,
     SidebarModule,
     NavbarModule,
     TranslateModule,
-    MatrialModule
+    MatrialModule,
+    FooterModule
   ]
 })
 export class SharedModule { }

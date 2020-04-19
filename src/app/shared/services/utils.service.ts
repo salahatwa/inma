@@ -124,7 +124,7 @@ loadDefaultSetting()
   if(lang&&lang!=null&&lang!='')
   this.setLang(lang);
   else
-  this.setLang('en');
+  this.setLang('ar');
 }
 
 
