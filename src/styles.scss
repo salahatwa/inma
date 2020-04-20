@@ -2,6 +2,52 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
+.input-control {
+  width: 100%;
+}
+/**
+** Angular matrial custom color
+*/
+.mat-success {
+  background-color: #00713d;
+  color: #fff;
+  border-color:#006436;
+}
+.mat-button.mat-success {
+  color: #00713d;
+  background-color:#00713d;
+  border-color:#006436;
+}
+.mat-input-element {
+  caret-color: #006436;
+}
+.mat-raised-button.mat-success, .mat-flat-button.mat-success{
+  background-color: #00713d;
+  color: white;
+}
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #006436;
+}
+
+.mat-form-field-underline, .mat-form-field-ripple {
+  background-color: #006436 !important;
+}
+/* Font color */
+// input.mat-input-element {
+//   color: #00713d;
+// }
+
+
+
+/**
+layout
+*/
+.main-content{
+  padding-top: 80px;
+}
+.top-buffer { margin-top:20px; }
+
 :root{
     font-size: 13px;
   }
@@ -60,7 +106,7 @@
     font-family: Conv_AlinmaTheSans-Plain, "Trebuchet MS", Helvetica, sans-serif !important; 
   }
   body{
-    direction: rtl;
+    // direction: rtl;
     text-align: right;
     background: #F9F9F9;
     color: #005157;
@@ -124,7 +170,7 @@
       background: #FDEDEF;
       border: 1px solid #CC3947;
       border-radius: 21px;
-      padding: .25rem 1rem;
+      // padding: .25rem 1rem;
       text-decoration: none !important;
       color: #CC3947 !important;
   }
@@ -493,4 +539,12 @@ input[type=checkbox] {
 
   
   
-  
+  /**Navbar
+  */
+  .navbar {
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+  /**
+  * End Navbar
+  */

@@ -5,6 +5,7 @@ import { SharedModule } from '../../modules/shared.module';
 import { MatrialModule } from '../../modules/matrial.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { IconsModule } from '../../modules/icons.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,6 +14,7 @@ import { IconsModule } from '../../modules/icons.module';
   imports: [
     CommonModule,
     MatrialModule,
+    RouterModule,
     TranslateModule,
     IconsModule
     // SharedModule

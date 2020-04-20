@@ -23,26 +23,41 @@
            <div class="login-side p-5 h-100" h-100="">
             <div class="dash-header-welcome clearfix mb-4 media">
               <span class="user-icon align-self-start rounded-circle p-2 bg-invest text-white ml-2">
-                <!-- <i data-feather="user"></i> -->
                 <i-feather name="user"></i-feather>
               </span>
               <h2 class="media-body">{{'form.label.welcome' |translate}}</h2>
             </div><!-- login-side-top -->
             <div class="login-side-form">
+
+              <h2  class="card-img">
+                <h6 class="form-title">   
+                    <mat-button-toggle-group [(value)] = "selectedLang"  appearance="legacy" name="fontStyle" aria-label="Font Style">
+                            <mat-button-toggle value="ar" (change)="useLanguage('ar')">{{'navbar.language.arabic'|translate}}</mat-button-toggle>
+                            <mat-button-toggle value="en" (change)="useLanguage('en')">{{'navbar.language.english'|translate}}</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </h6>
+            </h2>
+
              <form [formGroup]="authForm" (ngSubmit)="submitForm()">
-              <div class="form-group">
-                <label for="loginInputEmail" class="font-weight-bold">{{'form.label.email' |translate}}</label>
-                <input type="email" formControlName="usernameOrEmail" class="form-control login-text-input form-control-lg" id="loginInputEmail" aria-describedby="emailHelp">
-              </div>
-              <div class="form-group">
-                <label for="loginInputPassword" class="font-weight-bold">{{'form.label.password' | translate}}</label>
-                <input type="password" formControlName="password" class="form-control login-password-input form-control-lg" id="loginInputPassword">
-              </div>
-              <!-- <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input input-lg" id="loginCheck">
-                <label class="form-check-label" for="loginCheck">تذكرني</label>
-              </div> -->
-              <button type="submit" class="btn btn-success btn-lg btn-block" [class.spinner]="isSubmitting" [disabled]="!authForm.valid||isSubmitting" type="submit">{{'form.button.login' | translate}}</button>
+              <mat-form-field  appearance="outline" class="input-control">
+                      <mat-label>{{'form.label.email' | translate}}</mat-label>
+                      <input matInput formControlName="usernameOrEmail">
+                      <i-feather matSuffix name="user"></i-feather>
+                  </mat-form-field>
+
+
+
+                  <mat-form-field appearance="outline" class="input-control">
+                      <mat-label>{{'form.label.password' | translate}}</mat-label>
+                      <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                      <i-feather *ngIf="hide" matSuffix name="eye-off" style="cursor: pointer;" (click)="hide = !hide;$event.preventDefault()" ></i-feather>
+                      <i-feather *ngIf="!hide" matSuffix name="eye" style="cursor: pointer;" (click)="hide = !hide;$event.preventDefault()" ></i-feather>
+                  </mat-form-field>
+
+                  <button mat-raised-button color="success" class="btn-lg btn-block" [class.spinner]="isSubmitting" [disabled]="!authForm.valid||isSubmitting" type="submit">
+                    {{'form.button.login' | translate}}
+                  </button>
+            
             </form>
           </div><!-- login-side-form -->
         </div>

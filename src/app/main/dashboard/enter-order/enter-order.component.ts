@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmOrderDialogComponent } from './confirm-order-dialog/confirm-order-dialog.component';
 
@@ -8,6 +8,8 @@ import { ConfirmOrderDialogComponent } from './confirm-order-dialog/confirm-orde
   styleUrls: ['./enter-order.component.scss']
 })
 export class EnterOrderComponent implements OnInit {
+
+  @ViewChild("orderType") orderTypeField: ElementRef;
 
   constructor(public dialog: MatDialog) { }
 
@@ -23,5 +25,11 @@ export class EnterOrderComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log( result );
     });
+  }
+
+  getStockDetail(symbol:string)
+  {
+console.log(symbol);
+this.orderTypeField.nativeElement.focus();
   }
 }
