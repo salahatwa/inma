@@ -1,27 +1,11 @@
-import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+ <div class="col-lg-2 col-md-3 form-group mt-4">
+                        <button class="btn btn-green btn-sm  mr-2" type="submit"
+                            [disabled]="isLoading||!customerSearchForm.valid" (click)="getCustomersDetails()">
+                            {{'common.button.search'|translate}}
+                            <span *ngIf="isLoading" class="spinner-border spinner-border-sm"></span>
+                        </button>
 
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
-}
+                        <button class="btn btn-moonlight-blue btn-sm" type="reset" [disabled]="isLoading"
+                            (click)="clear()">{{'enter_order.clearBtn'|translate}}</button>
 
-@NgModule({
-  imports: [
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
-  ],
-  exports: [
-    TranslateModule
-  ],
-  declarations: []
-})
-export class TranslationModule { }
+                    </div>
