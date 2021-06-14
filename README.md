@@ -1,5 +1,10 @@
 https://alinma-sa.webex.com/meet/meabdelkader
 
 
-https://app.conceptboard.com/board/c5zh-0ypa-96rm-em68-euye
+Below information :
+-	Iqama : 2492428806
+-	Mada card :4323280029088572 (in-active)
+-	Account Num: 68203016899001
+-	Login name: SalahAtwa2030
+
 
