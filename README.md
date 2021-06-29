@@ -1,6 +1,15 @@
 https://alinma-sa.webex.com/meet/meabdelkader
 
-https://github.com/hedza06/spring-boot-jasper/blob/master/src/main/java/com/springboot/jasper/services/ReportService.java
+
+constructor() {
+  this.router.events
+   .pipe(filter(e => e instanceof NavigationStart))
+   .subscribe((e: NavigationStart) => {
+    const navigation  = this.router.getCurrentNavigation();
+    this.orderId = navigation.extras.state ? navigation.extras.state.orderId : 0;
+   });
+
+ }
 
 
 
